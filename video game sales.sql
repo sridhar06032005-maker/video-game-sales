@@ -1,0 +1,18 @@
+use vgsales_schema;
+select * from vg;
+select * from vg order by global_sales desc limit 10;
+select platform, sum(global_sales) as total_sales from vg group by platform order by total_sales desc;
+select genre, sum(global_sales) as total_sales from vg group by genre order by total_sales desc;
+select sum(na_sales) as north_america_sales,sum(eu_sales) as europe_sales,sum(jp_sales) as japan_sales,sum(other_sales) as rest_of_world_sales from vg;
+select publisher, sum(global_sales) as total_sales from vg group by publisher order by total_sales desc;
+select publisher, sum(global_sales) as total_sales from vg group by publisher order by total_sales desc;
+select year,sum(global_sales) as total_global_sales from vg group by year order by year;
+select platform,genre,sum(global_sales) as total_sales from vg group by platform, genre order by platform, total_sales desc;
+select genre,sum(na_sales) as total_na_sales,sum(eu_sales) as total_eu_sales,sum(jp_sales) as total_jp_sales,sum(other_sales) as total_other_sales from vg group by genre order by total_na_sales desc;
+select year,sum(global_sales) as total_sales from vg group by year order by year;
+select name,global_sales from vg order by global_sales desc;
+select year,genre,sum(global_sales) as total_sales from vg group by year, genre order by year asc, total_sales desc;
+select genre,sum(na_sales) as total_na_sales,sum(eu_sales) as total_eu_sales,sum(jp_sales) as total_jp_sales,sum(other_sales) as total_other_sales from vg group by genre order by total_na_sales desc;
+select year,sum(na_sales) as total_na_sales,sum(eu_sales) as total_eu_sales,sum(jp_sales) as total_jp_sales,sum(other_sales) as total_other_sales,sum(global_sales) as total_global_sales from vg group by year order by year asc;
+select sum(na_sales) as total_na_sales,sum(eu_sales) as total_eu_sales,sum(jp_sales) as total_jp_sales,sum(other_sales) as total_other_sales,sum(global_sales) as total_global_sales from vg;
+select platform,sum(global_sales) as total_global_sales from vg group by platform order by total_global_sales desc;
